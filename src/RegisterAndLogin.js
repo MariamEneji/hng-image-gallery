@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const RegisterAndLogin = () => {
 
-    const [login, setLogin] = useState(true)
+    const [login, setLogin] = useState(false)
 
     const history = useNavigate();
 
@@ -22,7 +22,7 @@ if(type == 'signup') {
 }).catch(err => {
     alert(err.code)
 
-    setLogin(false)
+    setLogin(true)
     
 })
 
