@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { database } from './firbase'
+import { database } from './firebase'
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 
@@ -46,7 +46,7 @@ signInWithEmailAndPassword(database, email, password).then((data) => {console.lo
 
   return (
     <div className='bg-gray-400 flex flex-col  justify-center items-center w-screen h-screen'>
-        <h1 className='p-2 text-3xl text-white'>Wanna See Awsome Pictures?</h1>
+        <h1 className='p-2 text-3xl text-white'>Looking for Pictures?</h1>
         <form className='h-72 px-4 gap-4 flex justify-center items-center flex-col w-72 rounded-md shadow-lg bg-gray-200'  onSubmit={(e) => handleSubmit(e,login)}>
             <h1 className='text-3xl font-bold '>{login ? 'LogIn' : 'SignUp'}
 
