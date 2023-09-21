@@ -15,7 +15,7 @@ const handleSubmit =(e, type)=>{
     const email = e.target.email.value
     const password = e.target.password.value
 
-if(type == 'signup') {
+if(login == false) {
     createUserWithEmailAndPassword(database, email, password).then((data) => {console.log(data, "authData");
 
     console.log(history('/home'))
@@ -30,18 +30,20 @@ if(type == 'signup') {
     
 }
 
-else
-signInWithEmailAndPassword(database, email, password).then((data) => {console.log(data, "authData");
+if (login == true) {
+
+    signInWithEmailAndPassword(database, email, password).then((data) => {console.log(data, "authData");
 
     history('/home');
 
-    console.log(history('/home'))
-}).catch((err) => {
-    alert(err.code)
     
+
+    console.log(history('/home'))
 })
-   
 }
+
+}
+
 
 
   return (
@@ -53,10 +55,12 @@ signInWithEmailAndPassword(database, email, password).then((data) => {console.lo
             </h1>
             <input className='w-full p-2 rounded-md' name='email' placeholder='Email' type='email'/>
             <input className='w-full p-2 rounded-md ' name='password' placeholder='Password' type='password'/>
-            <button className='border border-gray-400 py-2 px-4 hover:bg-gray-400 hover:text-white '>{login ? 'LogIn' : 'SignUp'}</button>
+            <button type='submit' className='border border-gray-400 py-2 px-4 hover:bg-gray-400 hover:text-white '>{login ? 'LogIn' : 'SignUp'}</button>
         </form>
     </div>
   )
+
 }
+
 
 export default RegisterAndLogin
