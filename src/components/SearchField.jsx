@@ -20,11 +20,11 @@ const handleButtonSearch = () => {
     setSearchImage(searchValue)
 }
 
-const API_KEY = 'E44Kiw7WFEdl1s75_FMlY7dBWQEY0NNoK7thAG4cEMg';
+
 
 const handleEnterSearch = e => {
 if (e.key === 'Enter') {
-    fetchData(`search/photos?page=1&query=${searchValue}&client_id=${API_KEY}`)
+    fetchData(`search/photos?page=1&query=${searchValue}&client_id=${process.env.REACT_APP_ACCESS_KEY}`)
     setSearchValue('')
     setSearchImage(searchValue)
 }
