@@ -32,9 +32,10 @@ if (e.key === 'Enter') {
 
 
   return (
-    <div className='flex'>
+    <div className='flex w-full md:w-[40%] '>
         <input 
-        className='bg-gray-50 border border-gray-300 text-sm w-full indent-2 p-2.5 outline-none focus:border-pink-500 focus:ring-1 rounded-tl rounded-bl'
+        className='bg-gray-50 border border-gray-300 text-sm w-full 
+         indent-2 p-2.5 outline-none focus:border-pink-500 focus:ring-1 rounded-tl rounded-bl'
         type="search" placeholder='Search anything' 
         value={searchValue}
         onChange={handleInputChange}

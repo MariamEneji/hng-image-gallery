@@ -14,7 +14,7 @@ import { TouchBackend } from 'react-dnd-touch-backend';
 export const ImageContext = createContext();
 
 
-function App() {
+function Main() {
 const [searchImage, setSearchImage] = useState('')
 
 const {response, isLoading, error, fetchData} = useAxios(`search/photos?page=1&query=random&client_id=${process.env.REACT_APP_ACCESS_KEY}`)
@@ -62,4 +62,4 @@ const backendForDND = isTouchDevice() ? TouchBackend && HTML5Backend  : HTML5Bac
   );
 }
 
-export default App;
+export default Main;
