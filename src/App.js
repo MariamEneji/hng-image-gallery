@@ -37,7 +37,7 @@ const isTouchDevice = () => {
 }
 
 
-const backendForDND = isTouchDevice() ? TouchBackend  : HTML5Backend;
+const backendForDND = isTouchDevice() ? TouchBackend && HTML5Backend  : HTML5Backend;
 
   return (
 
@@ -49,7 +49,7 @@ const backendForDND = isTouchDevice() ? TouchBackend  : HTML5Backend;
       <SearchField />
     </Jumbotron>
 
-<DndProvider backend={HTML5Backend}>
+<DndProvider backend={backendForDND}>
 
     <Images />
     </DndProvider>
